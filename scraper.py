@@ -1,9 +1,9 @@
 import bs4
 import requests_html
+import time
+from class_num import class_num
 
-class_num = 75871
-
-
+# Scraping url for current ASU class portal
 URL = (
     "https://webapp4.asu.edu/catalog/classlist?t=2217&k="
     + str(class_num)
@@ -21,7 +21,6 @@ def get_seats():
     results = soup.find(id="CatalogList")
 
     if results is None:
-        print("Class Full")
         return False
     else:
         available = results.find("td", class_="availableSeatsColumnValue")
@@ -31,8 +30,7 @@ def get_seats():
             + seats_arr[0].text
             + " seats available in your class, out of "
             + seats_arr[2].text
+            + " at "
+            + time.ctime()
         )
         return True
-
-
-get_seats()
