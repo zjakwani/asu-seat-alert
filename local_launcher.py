@@ -7,14 +7,17 @@ def run_local():
     activated = True
     while activated:
         if scraper.get_seats():
+
+            # If email alert not desired, remove this line for console alert only
             email_sender.send_email()
+
             activated = False
             print("Opening found at " + time.ctime())
             print("Local script stopped")
         else:
             print("Class still full... at " + time.ctime())
 
-    # set to check every 5 minutes
+    # set to check every x seconds
     time.sleep(10)
 
 

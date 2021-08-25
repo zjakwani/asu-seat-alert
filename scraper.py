@@ -12,19 +12,24 @@ URL = (
     + "&hon=F&promod=F&e=open&page=1"
 )
 
-
+# Scraping script
 def get_seats():
+
+    # Uses requests to access dynamic JavaScript-rendered content
     ses = requests_html.HTMLSession()
     response = ses.get(URL)
     response.html.render(sleep=1)
+    # uses BeautifulSoup to render and select the correct HTML elements
     soup = bs4.BeautifulSoup(response.html.html, "html.parser")
     results = soup.find(id="CatalogList")
 
     if results is None:
         return False
     else:
+        # If class is open, gets the HTML element for seat numbers
         available = results.find("td", class_="availableSeatsColumnValue")
         seats_arr = available.find_all("span")
+        # Console log
         print(
             "There are "
             + seats_arr[0].text
