@@ -8,8 +8,8 @@ def run_local():
     while activated:
         if scraper.get_seats():
 
-            # If email alert not desired, remove this line for console alert only
-            email_sender.send_email()
+            # UNCOMMENT THE LINE BELOW FOR EMAIL ALERTS (CREDENTIALS FILE REQUIRED)
+            # email_sender.send_email()
 
             activated = False
             print("Opening found at " + time.ctime())
@@ -17,8 +17,8 @@ def run_local():
         else:
             print("Class still full... at " + time.ctime())
 
-    # set to check every x seconds
-    time.sleep(10)
+    # CHECK FREQUENCY (in seconds)
+    time.sleep(60)
 
 
 # Script can run while computer is on and alert via console logs and email
