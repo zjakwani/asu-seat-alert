@@ -5,11 +5,6 @@ _A useful side project I used to enroll in full ASU classes by alerting when spo
 Written in **Python**, with **BeautifulSoup** and **requests_html** libraries for web scraping, and **AWS SES** for email alerts.<br/><br/>
 
 To use this project **locally**:
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > 63e41022179fcc0c1b6cad976386942ad3550244
 
 1. Clone the repo and navigate to it on the command line
 2. Create a virtual environment: `python -m venv env` and activate it: `source env/bin/activate`
@@ -20,11 +15,6 @@ To use this project **locally**:
 7. Run local_launcher.py<br/><br/>
 
 To enable email alerts:
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > 63e41022179fcc0c1b6cad976386942ad3550244
 
 1. Obtain Amazon SES SMTP credentials: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/smtp-credentials.html
 2. In the repo, create a file called credentials.py
