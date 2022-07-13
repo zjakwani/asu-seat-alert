@@ -1,11 +1,13 @@
+import time
+
 import bs4
 import requests_html
-import time
+
 from class_num import class_num
 
 # Scraping url for current ASU class portal
 URL = (
-    "https://webapp4.asu.edu/catalog/classlist?t=2217&k="
+    "https://webapp4.asu.edu/catalog/classlist?t=2227&k="
     + str(class_num)
     + "&k="
     + str(class_num)

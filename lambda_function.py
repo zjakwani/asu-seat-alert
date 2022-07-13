@@ -5,6 +5,6 @@ import email_sender
 def lambda_handler(event, context):
     if scraper.get_seats():
         email_sender.send_email()
-        return "Spot open, email sent"
+        return "There's a spot open! Just sent an email."
     else:
-        return "Class full, do nothing"
+        return "Sorry, class is still full"

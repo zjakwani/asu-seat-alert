@@ -1,8 +1,10 @@
-import smtplib
 import email.utils
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+
 from class_num import class_num
+# see instructions in the readme
 from credentials import my_email, my_ses_password, my_ses_username
 
 # can send and receive from same email as long as verified on AWS SES
